@@ -57,7 +57,7 @@ def indexer(url):  # check is whether indexed or not
 	else:
 		return False
 
-def simple_indexer(url):
+def simple_indexer(url):  # check baidu index status simply
 	caches = cache_links(url)
 	url = url.replace('http://', '')[:16]
 	print url
@@ -84,7 +84,7 @@ def siter(word):  # check the num of baidu site
 		return 'no data'
 
 
-def ranker(word, url):
+def ranker(word, url):  # check baidu rank with 100% accuracy
 	serps = serp_links(word)
 	for num, link in enumerate(serps):
 		if url in link:
@@ -94,7 +94,7 @@ def ranker(word, url):
 		return 'no data'
 
 
-def simple_ranker(word, url):
+def simple_ranker(word, url):  # check baidu rank simply
 	caches = cache_links(word)
 	for num, link in enumerate(caches):
 		if link == None:
