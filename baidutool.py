@@ -78,7 +78,7 @@ def siter(word):  # check the num of baidu site
     b_url = baidu_url(word)
     soup = bs(baidu_cont(b_url))
     div_tag = soup.find('div', {'class': 'c-span21 c-span-last'})
-    b_res = div_tag.p.b.string
+    b_res = div_tag.p.string
     pat = re.compile(r'[0-9,]+')
     match = pat.search(b_res)
     if match:
